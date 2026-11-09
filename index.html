@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos | Lion School</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="./CRUD.js" defer></script>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="card form-card">
+
+            <div class="card-content">
+
+                <h2>Cadastrar aluno</h2>
+
+                <form id="studentForm">
+
+                    <input type="hidden" id="studentId">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="nome">Nome completo *</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                placeholder="Como o aluno se chama?"
+                                maxlength="120"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="nome@exemplo.com"
+                                maxlength="150"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="celular">Celular</label>
+                            <input
+                                type="tel"
+                                id="celular"
+                                placeholder="(00) 00000-0000"
+                                maxlength="15"
+                                inputmode="numeric"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cidade">Cidade</label>
+                            <input
+                                type="text"
+                                id="cidade"
+                                placeholder="Informe a cidade"
+                                maxlength="100"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado">
+                                <option value="">Selecione o estado</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cep">CEP</label>
+                            <input
+                                type="text"
+                                id="cep"
+                                placeholder="00000-000"
+                                maxlength="9"
+                                inputmode="numeric"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="reset"
+                            class="btn btn-secondary"
+                            id="clearButton"
+                        >
+                            Limpar campos
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="saveButton"
+                        >
+                            Salvar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section class="card students-card">
+
+            <div class="students-header">
+
+                <h2>Alunos cadastrados</h2>
+
+                <div class="search-group">
+                    <label for="search">Buscar aluno</label>
+
+                    <input
+                        type="search"
+                        id="search"
+                        placeholder="Buscar por nome ou e-mail"
+                    >
+                </div>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Aluno</th>
+                            <th>E-mail</th>
+                            <th>Celular</th>
+                            <th>Cidade / UF</th>
+                            <th>CEP</th>
+                            <th class="actions-column">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentsTable">
+                        <tr>
+                            <td colspan="6">Carregando alunos...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+                <div id="emptyMessage" class="empty-message">
+                    Nenhum aluno encontrado.
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
