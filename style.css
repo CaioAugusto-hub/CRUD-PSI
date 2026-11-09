@@ -1,0 +1,385 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5069f6;
+    --primary-hover: #4058df;
+    --border: #dce4ff;
+    --background: #ffffff;
+    --surface: #f4f6fd;
+    --text: #172b63;
+    --muted: #8498c7;
+    --danger: #e34b5b;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.container {
+    width: calc(100% - 36px);
+    max-width: 1200px;
+    min-height: calc(100vh - 36px);
+    margin: 18px auto;
+    padding: 0;
+}
+
+/* CARDS */
+
+.card {
+    width: 100%;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    box-shadow: 0 3px 8px rgba(39, 74, 150, 0.04);
+    margin-bottom: 19px;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+/* FORMULÁRIO */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 0;
+}
+
+.form-group label,
+.search-group label {
+    color: #455987;
+    font-size: 11px;
+}
+
+.form-group input,
+.form-group select,
+.search-group input {
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+    border: 1px solid #d5def5;
+    border-radius: 4px;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 11px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-group input::placeholder,
+.search-group input::placeholder {
+    color: #a3b3d6;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.search-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(80, 105, 246, 0.10);
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+/* ÁREA DOS BOTÕES */
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-top: 18px;
+    padding: 12px 15px;
+
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-bottom: -15px;
+}
+
+.btn {
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--primary-hover);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: var(--text);
+    border: 1px solid #d5def5;
+}
+
+.btn-secondary:hover {
+    background: #f5f7ff;
+}
+
+/* LISTAGEM */
+
+.students-header {
+    min-height: 77px;
+    padding: 14px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.students-header h2 {
+    margin: 0;
+}
+
+.search-group {
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.search-group input {
+    height: 33px;
+}
+
+/* TABELA */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+}
+
+thead {
+    background: var(--surface);
+}
+
+th {
+    height: 35px;
+    padding: 0 15px;
+    color: #6077ad;
+    font-size: 10px;
+    font-weight: 500;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    height: 67px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e6ebf8;
+    color: #8496bc;
+    font-size: 10px;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background: #fafbff;
+}
+
+.actions-column {
+    text-align: center;
+}
+
+/* INFORMAÇÕES DO ALUNO */
+
+.student-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 135px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #e9eeff;
+    color: #5570e8;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.student-info strong {
+    display: block;
+    color: var(--text);
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.student-info small,
+td small {
+    display: block;
+    color: #8498c7;
+    font-size: 9px;
+    margin-top: 4px;
+}
+
+/* AÇÕES */
+
+.table-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.table-actions button {
+    height: 30px;
+    padding: 0 9px;
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-edit {
+    color: var(--primary);
+    border: 1px solid #d5def5;
+}
+
+.btn-edit:hover {
+    background: #f0f3ff;
+    border-color: var(--primary);
+}
+
+.btn-delete {
+    color: var(--danger);
+    border: 1px solid #f0d6da;
+}
+
+.btn-delete:hover {
+    background: #fff3f4;
+    border-color: var(--danger);
+}
+
+/* MENSAGENS */
+
+.empty-message,
+.error-message {
+    display: none;
+    padding: 25px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.empty-message {
+    color: var(--muted);
+}
+
+.error-message {
+    color: var(--danger);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: calc(100% - 24px);
+        margin: 12px auto;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .students-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .search-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 13px;
+    }
+
+    .card-content {
+        padding: 12px;
+    }
+
+    .form-actions {
+        padding: 12px;
+        margin-left: -12px;
+        margin-right: -12px;
+        margin-bottom: -12px;
+    }
+
+    .students-header {
+        padding: 14px 12px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+    }
+}
